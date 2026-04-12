@@ -13,4 +13,327 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--general-font), sans-serif;
+  background-image: var(--background-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.content {
+  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  margin-left: 21px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cards-background, #fff);
+  border: var(--border);
+  margin: 98px auto;
+  font-family: var(--accent-font), Monospace;
+  padding-block: 130px;
+  text-transform: uppercase;
+}
+
+.header_title {
+  font-size: clamp(49px, 30.54px + 4.92vw, 65px);
+}
+
+.header_description {
+  font-size: clamp(14px, 3.62px + 2.77vw, 23px);
+  margin-block-start: 20px;
+  line-height: 100%;
+}
+
+.main_content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  margin: auto;
+  background-color: var(--cards-background,#fff);
+  border: var(--border);
+}
+
+.card_img {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+.card_title {
+  font-family: var(--general-font), sans-serif;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+.card_text {
+  font-size: 18px;
+  line-height: 21px;
+  font-variation-settings: "wght" var(--text-fw, 410);
+}
+
+.pic {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img_description {
+  font-family: var(--accent-font), Monospace;
+  font-weight: 400;
+  position: absolute;
+  opacity: 0.5;
+  line-height: 100%;
+  color: var(--text-color, #000);
+  text-shadow: 0 0 1px var(--cards-background, #fff);
+  top: 25px;
+  right: 25px;
+  mix-blend-mode: hard-light;
+  font-size: 14px;
+}
+
+@supports (-webkit-text-stroke: 1px var(--cards-background)) or (text-stroke: 1px var(--cards-background)) {
+  .img_description {
+      text-shadow: none;
+      -webkit-text-stroke: 1px var(--cards-background);
+  }
+}
+
+.button__text {
+  position: relative;
+  font-size: 14px;
+  color: var(--cards-background, #fff);
+  mix-blend-mode: difference;
+  font-family: var(--accent-font, Monospace);
+}
+
+.card-text {
+  font-size: 18px;
+  line-height: 21px;
+  font-variation-settings: "wght" var(--text-fw, 410);
+}
+
+.card_description {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 25px;
+}
+
+.button {
+  font-family: var(--accent-font), Monospace;
+  position: relative;
+  background-color: var(--cards-background, #fff);
+  border: 2px solid var(--text-color, #000);
+  cursor: pointer;
+}
+
+.button::before {
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  inset: 0;
+  transition: transform 0.5s ease-in-out;
+  position: absolute;
+  background-color: var(--text-color, #000);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--text-color, #000);
+  transition: box-shadow 0.3s ease;
+}
+
+
+.button:hover::before {
+  transform: scale(1);
+}
+
+
+.card_buttons {
+  display: flex;
+  justify-content: end;
+  align-items: start;
+}
+
+.card__icon-button{
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  align-content: center;  
+}
+
+.card__like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 130px;
+  height: 38px;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.brightness {
+  filter: brightness(70%); /* затемнение */
+}
+
+.contrast {
+  filter: contrast(150%); /* повышенная контрастность */
+}
+
+.saturate {
+  filter: saturate(200%); /* удвоенная насыщенность */
+}
+
+.invert {
+  filter: invert(80%); /* частичная инверсия */
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--text-color, #000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--text-color, #000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--contour-color, #FF0000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--contour-color, #FF0000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--contour-color, #FF0000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--contour-color, #FF0000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--contour-color, #FF0000);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: Sparks 0.3s 0.3s ease-in alternate;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: Scale 0.3s 0.1s ease-in alternate;
+}
+
+.popup {
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 27px;
+  inline-size: clamp(21.3125rem, 21.0264rem + 1.2207vw, 22.125rem);
+}
+
+.popup_open {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--cards-background, #fff);
+  border: 2px solid var(--text-color, #000); 
+  margin: 0px auto 100px;
+  gap: 10px;
+  padding: 14px 18px;
+}
+
+.text_popup {
+  font-family: var(--accent-font), Monospace;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.popup_close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 2px solid var(--text-color, #000);
+  background-color: var(--cards-background, #fff);
+}
+
+.opened_popup {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.popup::backdrop {
+  opacity: 0.75;
+  background-color: var(--color-text, #000);
+}
+
+.popup[open] {
+  display: flex;
+}
+
+.floppy{
+  flex-shrink: 0;
+}
+
+@media (max-width: 375px) {
+  .popup_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-direction: column;
+  }
 }
