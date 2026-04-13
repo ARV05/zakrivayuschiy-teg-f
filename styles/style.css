@@ -87,6 +87,8 @@
 }
 
 .img_description {
+  top: 25px;
+  right: 25px;
   font-family: var(--accent-font), Monospace;
   font-weight: 400;
   position: absolute;
@@ -94,10 +96,9 @@
   line-height: 100%;
   color: var(--text-color, #000);
   text-shadow: 0 0 1px var(--cards-background, #fff);
-  top: 25px;
-  right: 25px;
   mix-blend-mode: hard-light;
   font-size: 14px;
+  z-index: 1;
 }
 
 @supports (-webkit-text-stroke: 1px var(--cards-background)) or (text-stroke: 1px var(--cards-background)) {
