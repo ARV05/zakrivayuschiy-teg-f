@@ -167,12 +167,12 @@
   align-items: start;
 }
 
-.card__icon-button{
+.card__icon-button {
   background-color: transparent;
   outline: none;
   cursor: pointer;
   border: none;
-  align-content: center;  
+  align-content: center;
 }
 
 .card__like-button {
@@ -208,8 +208,8 @@
   filter: saturate(200%); /* удвоенная насыщенность */
 }
 
-.invert {
-  filter: invert(80%); /* частичная инверсия */
+.invert_contrast {
+  filter: invert(80%) contrast(150%); /* частичная инверсия */
 }
 
 .sparks {
@@ -284,7 +284,7 @@
   flex-direction: row;
   align-items: center;
   background-color: var(--cards-background, #fff);
-  border: 2px solid var(--text-color, #000); 
+  border: 2px solid var(--text-color, #000);
   margin: 0px auto 100px;
   gap: 10px;
   padding: 14px 18px;
@@ -317,14 +317,14 @@
 
 .popup::backdrop {
   opacity: 0.75;
-  background-color: var(--color-text, #000);
+  background-color: var(--text-color, #000);
 }
 
 .popup[open] {
   display: flex;
 }
 
-.floppy{
+.floppy {
   flex-shrink: 0;
 }
 
