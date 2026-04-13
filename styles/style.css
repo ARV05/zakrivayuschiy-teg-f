@@ -70,6 +70,7 @@
   font-family: var(--general-font), sans-serif;
   font-size: 18px;
   padding: 5px 10px;
+  font-variation-settings: "wght" 715;
 }
 
 .card_text {
@@ -116,12 +117,6 @@
   font-family: var(--accent-font, Monospace);
 }
 
-.card-text {
-  font-size: 18px;
-  line-height: 21px;
-  font-variation-settings: "wght" var(--text-fw, 410);
-}
-
 .card_description {
   display: flex;
   flex-direction: column;
@@ -135,6 +130,7 @@
   background-color: var(--cards-background, #fff);
   border: 2px solid var(--text-color, #000);
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
@@ -153,14 +149,11 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px 0 0 var(--text-color, #000);
-  transition: box-shadow 0.3s ease;
 }
-
 
 .button:hover::before {
   transform: scale(1);
 }
-
 
 .card_buttons {
   display: flex;
@@ -174,6 +167,15 @@
   cursor: pointer;
   border: none;
   align-content: center;
+  transition: outline 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--color-text, #000);
 }
 
 .card__like-button {
@@ -329,7 +331,12 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 375px) {
+.floppy_icon{
+  color: var(--cards-background, #fff);
+  mix-blend-mode: difference;
+}
+
+@media (width <= 375px) {
   .popup_open {
     display: flex;
     justify-content: center;
