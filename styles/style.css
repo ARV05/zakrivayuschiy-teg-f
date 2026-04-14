@@ -343,7 +343,7 @@
   mix-blend-mode: difference;
 }
 
-@media (width <= 376px) { 
+@media (width <= 375px) {
   .popup_open {
     display: flex;
     justify-content: center;
