@@ -335,12 +335,12 @@
   flex-shrink: 0;
 }
 
-.floppy_icon{
+.floppy_icon {
   color: var(--cards-background, #fff);
   mix-blend-mode: difference;
 }
 
-@media (max-width: 375px) {
+@media (width <= 375px) {
   .popup_open {
     display: flex;
     justify-content: center;
@@ -354,7 +354,7 @@
     height: 28px;
   }
 
-  .card_text{
+  .card_text {
     padding-bottom: 2px;
   }
 }
